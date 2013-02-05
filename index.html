@@ -3,11 +3,11 @@
 
 	<head>
 		<meta charset="utf-8">
+        
+		<title>Mrzim / Volim JavaScript</title>
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="reveal.js prezentacija o love/hate odnosu izmeðu developera i JavaScript-a">
+		<meta name="author" content="Miroslav Popovic">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -38,19 +38,40 @@
 			<div class="slides">
 
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Mrzim / Volim JavaScript</h1>
+				    <h3>Love/hate odnos izmedju developera i JavaScript-a</h3>
+				    <p>
+				        Prezentacija za HTML5/JavaScript<br/> korisnicku grupu, Banja Luka
+				    </p>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Autor <a href="http://blog.miroslavpopovic.com">Miroslav Popovic</a> / <a href="http://twitter.com/miroslavpopovic">@miroslavpopovic</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+				    <h2>Sta je tema danasnje emisije?</h2>
+                    
+				    <ul>
+				        <li class="fragment">
+				            Zasto mrzimo JavaScript?
+				            <ul>
+				                <li class="fragment">Razlicitost implementacija u browserima</li>
+				                <li class="fragment">DOM</li>
+				                <li class="fragment">"Pogresno koristenje"</li>
+				                <li class="fragment">Nedostatak pravih alata za razvoj i debugging</li>
+				            </ul>
+				        </li>
+				        <li class="fragment">
+				            Zasto volimo JavaScript?
+				            <ul>
+				                <li class="fragment">Jednostavnost</li>
+				                <li class="fragment">Mogucnosti</li>
+				                <li class="fragment">Sveprisutnost</li>
+				                <li class="fragment">Patterns</li>
+				                <li class="fragment">Community i ekosistem</li>
+				            </ul>
+				        </li>
+				    </ul>
 
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -59,33 +80,82 @@
 
 				<!-- Example of nested vertical slides -->
 				<section>
+				    <section>
+				        <h2>Istorija</h2>
+
+				        <img src="images/brendan-eich.jpg" style="float: right;" alt="Brendan Eich"/>
+                        
+				        <ul>
+				            <li>Brendan Eich, Netscape, 1995.</li>
+				            <li class="fragment">LiveScript</li>
+				            <li class="fragment">Internet Explorer 3 - JScript, 1996.</li>
+				            <li class="fragment">ECMA Standardization - ECMAScript, 1996.</li>
+				        </ul>
+                        
+				        <aside class="notes">
+				            Brendan je danas CTO (tehnicki direktor Mozilla korporacije);<br/> 
+				            JavaScript je poceo kao dodatak za Netscape za jednostavni rad sa Java appletima - otud ime, nazalost;
+				        </aside>
+				    </section>
+				    <section>
+				        <blockquote cite="http://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java">
+				            Java and JavaScript are similar like Car and Carpet are similar.
+				        </blockquote>
+				        <p>
+				            <a href="http://stackoverflow.com/questions/245062/whats-the-difference-between-javascript-and-java">
+				                Greg Hewgill on Stack Overflow
+				            </a>
+				        </p>
+				    </section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>Standardizacija</h2>
+					    <ul>
+					        <li>ECMA Standardization - ECMAScript, 1996</li>
+					        <li>ECMAScript 1, juni 1997.</li>
+					        <li>ECMAScript 2, juni 1998.</li>
+					        <li>ECMAScript 3, decembar 1999.</li>
+					        <li>ECMAScript 4, napusten</li>
+					        <li>ECMAScript 5, decembar 2009.</li>
+					        <li>ECMAScript 6 - Harmony, u razvoju</li>
+					    </ul>
+
+					    <aside class="notes">
+					        ECMA - European Computer Manufacturers Association;<br/>
+					        ECMAScript 5 donosi "use strict", getters i setters, JSON podrsku, jednostavniji pristup na object properties
+					    </aside>
 					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+				    <section>
+				        <h2>Browser Wars I & II</h2>
+				        <img src="images/browser-wars.jpg" alt="Browser Wars">
+				    </section>
+				    <section>
+				        <h2>AJAX i JavaScript revolucija</h2>
+				        <ul>
+				            <li class="fragment">XMLHTTP, Microsoft Outlook Web Access team, 1998.</li>
+				            <li class="fragment">IE 5 dobija XMLHTTP ActiveX kontrolu, 1999.</li>
+				            <li class="fragment">Mozilla, Safari, Opera, IE 7... - XMLHttpRequest JavaScript object</li>
+				            <li class="fragment">Gmail, 2004.</li>
+				            <li class="fragment">
+				                <a href="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications">Ajax termin</a> - Jesse James Garrett, 2005.
+				            </li>
+				        </ul>
+				    </section>
+				    <section>
+				        <h2>Boooooom!!!</h2>
+				        <img src="images/explosion.jpg" alt="Eksplozija">
+				    </section>
+				    <section>
+				        <h2>Sadasnjost</h2>
+				        <ul>
+				            <li class="fragment">Libraries &amp; Frameworks</li>
+				            <li class="fragment">prototype, jQuery...</li>
+				            <li class="fragment">Backbone, Knockout, Ember, Angular...</li>
+				            <li class="fragment">CommonJS</li>
+				            <li class="fragment">Interpreteri (CoffeScript, Dart, TypeScript)</li>
+				            <li class="fragment">Serverski JavaScript (node.js)</li>
+				            <li class="fragment">Ne samo unutar browser-a</li>
+				            <li class="fragment">Novi / stari alati</li>
+				        </ul>
 					</section>
 				</section>
 
@@ -355,7 +425,8 @@ function linkify( selector ) {
 				progress: true,
 				history: true,
 				center: true,
-
+				mouseWheel: true,
+				
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
