@@ -158,46 +158,139 @@
 				        </ul>
 					</section>
 				</section>
+                
+			    <section>
+			        <section>
+			            <h2>Losa reputacija</h2>
+			            <img class="fragment" src="images/hate.jpg" alt="'Mrzim' JavaScript">
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview. Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+					    <aside class="notes">
+					        Mada je cilj ove prezentacije bio predstaviti dobre i lose stvari u JS core, ipak su najvece frustracije vezane za DOM i alate
+					    </aside>
+				    </section>
 
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						If you don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
+				    <section>
+					    <h2>Browseri i DOM</h2>
+				        <pre class="fragment"><code contenteditable>
+// DOM Level 0 (&lt; IE5.5)
+var form = document.forms['formId'];
 
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
+// DOM Level 1+
+var form = document.getElementById('formId');
+                        </code></pre>
+				        <pre class="fragment"><code contenteditable>
+// DOM - Web standard (IE9+ i svi ostali)
+var text = element.textContent;
 
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+// IE, WebKit (Safari, Chrome), Opera
+var text = element.innerText;
+                        </code></pre>
+				        <pre class="fragment"><code contenteditable>
+// Prije DOM Level 2
+element.onclick = function() { ... }
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+// &lt; IE9
+element.attachEvent('onclick', function() { ... });
+
+// DOM Level 2
+element.addEventListener('click', function() { ... });
+                        </code></pre>
+					    <aside class="notes">
+					        Starije verzije IE i Opere vracaju element po imenu, ne po id-u<br/>
+                            innerText ne vraca sadrzaj style i script elemenata kao ni nevidljive elemente<br/>
+					    </aside>
+				    </section>
+
+				    <section>
+					    <h2>Rjesenja - Browser sniffing</h2>
+				        <pre><code contenteditable>
+if (navigator.userAgent.indexOf('MSIE') != -1) {
+    // IE kod ovdje...
+} else {
+    // Non-IE kod ovdje...
+}
+                        </code></pre>
+				        <pre><code contenteditable>
+&lt;!--[if IE 6]&gt;
+&lt;html lass="ie6"&gt;
+&lt;![endif]--&gt;
+
+&lt;!--[if !IE]&gt;
+&lt;html lass="non-ie"&gt;
+&lt;![endif]--&gt;
+				        </code></pre>
+
+					    <aside class="notes">
+					        Odredjivanje tipa i verzije browsera<br/>
+                            IE 10 je izbacio conditional comments<br/>
+					    </aside>
+				    </section>
+
+				    <section>
+					    <h2>Rjesenja - Feature detection</h2>
+				        <pre><code contenteditable>
+var modifyText = function() { ... };
+
+if (element.addEventListener) {
+    element.addEventListener('click', modifyText);
+} else {
+    element.attachEvent('onclick', modifyText);
+}
+                        </code></pre>
+
+					    <aside class="notes">
+					        Odredjivanje tipa i verzije browsera<br/>
+                            IE 10 je izbacio conditional comments<br/>
+					    </aside>
+				    </section>
+
+				    <section>
+				        <h2>Rjesenja - Third party</h2>
+				        <p>jQuery</p>
+				        <pre><code contenteditable>
+var form = $('#formId');
+
+var text = $(element).text();
+                            
+$(element).click(function () { ... });
+$(element).on('click', function () { ... });
+                        </code></pre>
+                        
+				        <div class="fragment">
+				            <p>Modernizr</p>
+				            <pre><code contenteditable>
+Modernizr.load({
+    test: Modernizr.geolocation,
+    yep : 'geo.js',
+    nope: 'geo-polyfill.js'
+});
+
+if (Modernizr.touch) {
+    // ...
+} else {
+    // ...
+}
+                            </code></pre>
+				        </div>
+
+					    <aside class="notes">
+					        Polyfill - JavaScript shim - replicira ponasanje API-a prema web standardima<br/>
+                            Primjer - window.WebSockets
+					    </aside>
+				    </section>
+
+				    <section>
+				        <h2>Alati</h2>
+				        <img class="fragment" src="images/js-debugging-old.jpg" style="max-width: 700px;" alt="'IE debugging">
+                        <h3 class="fragment">Omiljeni debug tool</h3>
+				        <pre class="fragment"><code>alert('Ne radi ti ovo...');</code></pre>
+
+					    <aside class="notes">
+					        IE prije 10 godina
+					    </aside>
+				    </section>
+			        
+			    </section>
 
 				<section data-markdown>
 					<script type="text/template">
