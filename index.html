@@ -19,12 +19,20 @@
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
+        
+        <style type="text/css">
+            .no-border {
+                background: none !important;
+                border: 0 !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+            }
+        </style>
 
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
             document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
         </script>
-
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
@@ -46,6 +54,8 @@
                     <p>
                         <small>Autor <a href="http://blog.miroslavpopovic.com">Miroslav Popovic</a> / <a href="http://twitter.com/miroslavpopovic">@miroslavpopovic</a></small>
                     </p>
+
+                    <img src="images/hjugbl-logo.png" style="max-width: 200px;" class="no-border" alt="HTML5 and JavaScript User Group Banja Luka"/>
                 </section>
 
                 <section>
@@ -898,6 +908,11 @@ alert(sum(pi,pi));</code></pre>
                 <section>
                     <h1>KRAJ</h1>
                     <h3>Miroslav Popovic / miroslavpopovic.com</h3>
+                    <p>
+                        <a href="http://miroslavpopovic.com/presentations/i-love-hate-js/">http://miroslavpopovic.com/presentations/i-love-hate-js/</a>
+                    </p>
+
+                    <img src="images/hjugbl-logo.png" style="max-width: 400px;" class="no-border" alt="HTML5 and JavaScript User Group Banja Luka"/>
                 </section>
 
             </div>
