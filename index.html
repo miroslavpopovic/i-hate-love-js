@@ -6,7 +6,7 @@
         
         <title>Mrzim / Volim JavaScript</title>
 
-        <meta name="description" content="reveal.js prezentacija o love/hate odnosu izmeðu developera i JavaScript-a">
+        <meta name="description" content="reveal.js prezentacija o love/hate odnosu izmedju developera i JavaScript-a">
         <meta name="author" content="Miroslav Popovic">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,13 +79,10 @@
                                 <li class="fragment">Sveprisutnost</li>
                                 <li class="fragment">Patterns</li>
                                 <li class="fragment">Community i ekosistem</li>
+                                <li class="fragment">...</li>
                             </ul>
                         </li>
                     </ul>
-
-                    <aside class="notes">
-                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-                    </aside>
                 </section>
 
                 <!-- Example of nested vertical slides -->
@@ -137,6 +134,12 @@
                     <section>
                         <h2>Browser Wars I & II</h2>
                         <img src="images/browser-wars.jpg" alt="Browser Wars">
+
+                        <aside class="notes">
+                            Ratovi browsera su obiljezili istoriju JavaScripta;<br/>
+                            Prvi - izmedju Netscape-a i Internet Explorera<br/>
+                            Drugi - izmedju modernih browsera - IE, Firefox i Chrome
+                        </aside>
                     </section>
                     <section>
                         <h2>AJAX i JavaScript revolucija</h2>
@@ -148,6 +151,7 @@
                             <li class="fragment">
                                 <a href="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications">Ajax termin</a> - Jesse James Garrett, 2005.
                             </li>
+                            <li class="fragment">i rezultat toga je...</li>
                         </ul>
                     </section>
                     <section>
@@ -165,6 +169,7 @@
                             <li class="fragment">Serverski JavaScript (node.js)</li>
                             <li class="fragment">Ne samo unutar browser-a</li>
                             <li class="fragment">Novi / stari alati</li>
+                            <li class="fragment">...</li>
                         </ul>
                     </section>
                 </section>
@@ -172,7 +177,7 @@
                 <section>
                     <section>
                         <h2>Losa reputacija</h2>
-                        <img class="fragment" src="images/hate.jpg" alt="'Mrzim' JavaScript">
+                        <img src="images/hate.jpg" alt="'Mrzim' JavaScript">
 
                         <aside class="notes">
                             Mada je cilj ove prezentacije bio predstaviti dobre i lose stvari u JS core, ipak su najvece frustracije vezane za DOM i alate
@@ -249,8 +254,8 @@ if (element.addEventListener) {
                         </code></pre>
 
                         <aside class="notes">
-                            Odredjivanje tipa i verzije browsera<br/>
-                            IE 10 je izbacio conditional comments<br/>
+                            Polyfill - JavaScript shim - replicira ponasanje API-a prema web standardima<br/>
+                            Primjer - window.WebSockets
                         </aside>
                     </section>
 
@@ -291,12 +296,13 @@ if (Modernizr.touch) {
 
                     <section>
                         <h2>Alati</h2>
-                        <img class="fragment" src="images/js-debugging-old.jpg" style="max-width: 700px;" alt="IE debugging">
+                        <img class="fragment no-border" src="images/js-debugging-old.jpg" style="max-width: 700px;" alt="IE debugging">
                         <h3 class="fragment">Omiljeni debug tool</h3>
                         <pre class="fragment"><code>alert('Ne radi ti ovo...');</code></pre>
 
                         <aside class="notes">
-                            IE prije 10 godina
+                            IE prije 10 godina<br/>
+                            Editori: Front Page, Dreamweaver
                         </aside>
                     </section>
 
@@ -553,6 +559,7 @@ null == undefined   // true
                         </p>
 
                         <aside class="notes">
+                            == i != nisu tranzitivni<br/>
                             Svi navedeni izrazi vracaju false sa ===
                         </aside>
                     </section>
@@ -717,9 +724,9 @@ Animal.prototype = {
 var Cat = function() { /* ... */ };
 Cat.prototype = new Animal();
                             
-var myKat = new Cat();
-myKat.name = 'Kitty';
-myKat.introduce();</code></pre>   
+var myCat = new Cat();
+myCat.name = 'Kitty';
+myCat.introduce();</code></pre>   
 
                     </section>
 
@@ -909,7 +916,10 @@ alert(sum(pi,pi));</code></pre>
                     <h1>KRAJ</h1>
                     <h3>Miroslav Popovic / miroslavpopovic.com</h3>
                     <p>
-                        <a href="http://miroslavpopovic.com/presentations/i-love-hate-js/">http://miroslavpopovic.com/presentations/i-love-hate-js/</a>
+                        <a href="http://miroslavpopovic.com/presentations/i-hate-love-js/">http://miroslavpopovic.com/presentations/i-hate-love-js</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/miroslavpopovic/i-hate-love-js">https://github.com/miroslavpopovic/i-hate-love-js</a>
                     </p>
 
                     <img src="images/hjugbl-logo.png" style="max-width: 400px;" class="no-border" alt="HTML5 and JavaScript User Group Banja Luka"/>
